@@ -3,60 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>طلب صفحة هبوط</title>
+    <title>Order Your Landing Page | طلب صفحة هبوط</title>
     <style>
-        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
-        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
-        h2 { color: #1c1e21; margin-bottom: 5px; font-size: 24px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
+        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; }
+        h2 { color: #1c1e21; margin-bottom: 5px; font-size: 22px; line-height: 1.4; }
         .price { color: #e41e3f; font-weight: bold; font-size: 24px; margin-bottom: 25px; display: block; background: #fff0f2; padding: 10px; border-radius: 10px; }
-        input, select { width: 100%; padding: 15px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 10px; font-size: 16px; outline: none; background: #fff; }
-        .btn { background: #25D366; color: white; padding: 18px; border: none; border-radius: 10px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
+        .lang-label { display: block; text-align: right; font-size: 14px; margin-bottom: 5px; color: #65676b; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; outline: none; background: #fff; box-sizing: border-box; }
+        .btn { background: #25D366; color: white; padding: 18px; border: none; border-radius: 10px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: 0.3s; }
+        .btn:hover { background: #1ebe57; transform: translateY(-2px); }
     </style>
 </head>
 <body>
 
 <div class="card">
-    <h2>طلب صفحة هبوط احترافية</h2>
-    <span class="price">30$ (حوالي 300 درهم)</span>
+    <h2>طلب صفحة هبوط احترافية<br><span style="font-size: 18px; color: #555;">Professional Landing Page Order</span></h2>
+    <span class="price">30$ (≈ 300 DH)</span>
     
-    <input type="text" id="name" placeholder="الإسم الكامل">
-    <input type="tel" id="phone" placeholder="رقم الهاتف (مع رمز الدولة)">
+    <label class="lang-label">Full Name | الإسم الكامل</label>
+    <input type="text" id="name" placeholder="Enter your name">
     
+    <label class="lang-label">Phone Number | رقم الهاتف</label>
+    <input type="tel" id="phone" placeholder="+Country Code 000...">
+    
+    <label class="lang-label">Country | الدولة</label>
     <select id="country">
-        <option value="" disabled selected>اختار الدولة</option>
-        <option value="المغرب">المغرب 🇲🇦</option>
-        <option value="السعودية">السعودية 🇸🇦</option>
-        <option value="الإمارات">الإمارات 🇦🇪</option>
-        <option value="قطر">قطر 🇶🇦</option>
-        <option value="الكويت">الكويت 🇰🇼</option>
-        <option value="سلطنة عمان">سلطنة عمان 🇴🇲</option>
-        <option value="البحرين">البحرين 🇧🇭</option>
-        <option value="مصر">مصر 🇪🇬</option>
-        <option value="الجزائر">الجزائر 🇩🇿</option>
-        <option value="تونس">تونس 🇹🇳</option>
-        <option value="ليبيا">ليبيا 🇱🇾</option>
-        <option value="موريتانيا">موريتانيا 🇲🇷</option>
-        <option value="الأردن">الأردن 🇯🇴</option>
-        <option value="لبنان">لبنان 🇱🇧</option>
-        <option value="سوريا">سوريا 🇸🇾</option>
-        <option value="العراق">العراق 🇮🇶</option>
-        <option value="فلسطين">فلسطين 🇵🇸</option>
-        <option value="السودان">السودان 🇸🇩</option>
-        <option value="اليمن">اليمن 🇾🇪</option>
-        <option value="تركيا">تركيا 🇹🇷</option>
-        <option value="فرنسا">فرنسا 🇫🇷</option>
-        <option value="إسبانيا">إسبانيا 🇪🇸</option>
-        <option value="إيطاليا">إيطاليا 🇮🇹</option>
-        <option value="ألمانيا">ألمانيا 🇩🇪</option>
-        <option value="بريطانيا">بريطانيا 🇬🇧</option>
-        <option value="أمريكا">أمريكا 🇺🇸</option>
-        <option value="كندا">كندا 🇨🇦</option>
-        <option value="أخرى">دولة أخرى...</option>
+        <option value="" disabled selected>Select Country / اختر الدولة</option>
+        <option value="Morocco">Morocco 🇲🇦 المغرب</option>
+        <option value="Saudi Arabia">Saudi Arabia 🇸🇦 السعودية</option>
+        <option value="UAE">UAE 🇦🇪 الإمارات</option>
+        <option value="USA">USA 🇺🇸 أمريكا</option>
+        <option value="France">France 🇫🇷 فرنسا</option>
+        <option value="Spain">Spain 🇪🇸 إسبانيا</option>
+        <option value="Germany">Germany 🇩🇪 ألمانيا</option>
+        <option value="UK">UK 🇬🇧 بريطانيا</option>
+        <option value="Canada">Canada 🇨🇦 كندا</option>
+        <option value="Qatar">Qatar 🇶🇦 قطر</option>
+        <option value="Egypt">Egypt 🇪🇬 مصر</option>
+        <option value="Other">Other / دولة أخرى</option>
     </select>
 
-    <input type="text" id="city_input" placeholder="المدينة">
+    <label class="lang-label">City | المدينة</label>
+    <input type="text" id="city_input" placeholder="Your City">
 
-    <button class="btn" onclick="send()">تأكيد الطلب عبر واتساب</button>
+    <button class="btn" onclick="send()">Confirm via WhatsApp | تأكيد الطلب</button>
 </div>
 
 <script>
@@ -67,18 +58,18 @@
         var ci = document.getElementById('city_input').value;
         
         if(!n || !p || !co || !ci) { 
-            alert("يرجى ملء جميع الخانات"); 
+            alert("Please fill all fields | يرجى ملء جميع الخانات"); 
             return; 
         }
         
-        var msg = "طلب جديد عالمي:%0A" + 
-                  "*الاسم:* " + n + "%0A" + 
-                  "*الهاتف:* " + p + "%0A" + 
-                  "*الدولة:* " + co + "%0A" + 
-                  "*المدينة:* " + ci + "%0A" +
-                  "*السعر المتفق عليه:* 30$";
+        var msg = "New International Order:%0A" + 
+                  "*Name:* " + n + "%0A" + 
+                  "*Phone:* " + p + "%0A" + 
+                  "*Country:* " + co + "%0A" + 
+                  "*City:* " + ci + "%0A" +
+                  "*Price:* 30$";
                   
-        window.location.href = "https://wa.me/212681379627?text=" + msg;
+        window.location.href = "https://wa.me/212608337962?text=" + msg;
     }
 </script>
 
