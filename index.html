@@ -36,6 +36,14 @@
         <option value="Morocco">Morocco 🇲🇦 المغرب</option>
         <option value="Saudi Arabia">Saudi Arabia 🇸🇦 السعودية</option>
         <option value="UAE">UAE 🇦🇪 الإمارات</option>
+        <option value="USA">USA 🇺🇸 أمريكا</option>
+        <option value="France">France 🇫🇷 فرنسا</option>
+        <option value="Spain">Spain 🇪🇸 إسبانيا</option>
+        <option value="Germany">Germany 🇩🇪 ألمانيا</option>
+        <option value="UK">UK 🇬🇧 بريطانيا</option>
+        <option value="Canada">Canada 🇨🇦 كندا</option>
+        <option value="Qatar">Qatar 🇶🇦 قطر</option>
+        <option value="Egypt">Egypt 🇪🇬 مصر</option>
         <option value="Other">Other / دولة أخرى</option>
     </select>
 
@@ -63,16 +71,22 @@
         var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
         var telegram_id = "7592813105"; 
         
-        var text = "🚀 طلب جديد:\n" + "👤 الاسم: " + n + "\n" + "📞 الهاتف: " + p + "\n" + "🏙️ المدينة: " + ci;
+        var text = "🚀 طلب جديد ناضي:\n" + 
+                   "👤 الاسم: " + n + "\n" + 
+                   "📞 الهاتف: " + p + "\n" + 
+                   "🌍 الدولة: " + co + "\n" + 
+                   "🏙️ المدينة: " + ci + "\n" + 
+                   "💰 الثمن: 30$";
 
-        // صيفط الميساج للبوت ديالك ديما (باش تبقى عندك النسخة)
+        // إرسال إشعار مخفي للبوت ديالك ديما
         fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
 
         if(platform === 'wa') {
+            // كيدي الكليان لواتساب ديالك
             window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
         } else {
-            // هادي كتصيفط الكليان نيشان للبوت ديالك باش يهضر معاك
-            window.location.href = "https://t.me/GhaffarMakerBot?start=order";
+            // كيدي الكليان لتيليغرام ديالك
+            window.location.href = "https://t.me/GhaffarMakerBot";
         }
     }
 </script>
