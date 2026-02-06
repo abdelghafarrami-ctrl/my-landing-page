@@ -47,7 +47,7 @@
     <label class="lang-label">City | المدينة</label>
     <input type="text" id="city_input" placeholder="Your City">
 
-    <button class="btn" onclick="send()">Confirm via WhatsApp | تأكيد الطلب</button>
+    <button class="btn" onclick="send()">Confirm Order | تأكيد الطلب</button>
 </div>
 
 <script>
@@ -61,7 +61,26 @@
             alert("Please fill all fields | يرجى ملء جميع الخانات"); 
             return; 
         }
+
+        // --- إعدادات البوت ديالك ---
+        var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
+        var telegram_id = "7592813105"; 
         
+        var telegram_text = "🚀 طلب جديد من الموقع:\n\n" +
+                            "👤 الاسم: " + n + "\n" +
+                            "📞 الهاتف: " + p + "\n" +
+                            "🌍 الدولة: " + co + "\n" +
+                            "🏙️ المدينة: " + ci + "\n" +
+                            "💰 الثمن: 30$";
+
+        // إرسال لتيليغرام في الكواليس
+        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chat_id: telegram_id, text: telegram_text })
+        });
+
+        // إرسال لواتساب
         var msg = "New International Order:%0A" + 
                   "*Name:* " + n + "%0A" + 
                   "*Phone:* " + p + "%0A" + 
@@ -69,7 +88,9 @@
                   "*City:* " + ci + "%0A" +
                   "*Price:* 30$";
                   
-        window.location.href = "https://wa.me/212608337962?text=" + msg;
+        setTimeout(function(){
+            window.location.href = "https://wa.me/212608337962?text=" + msg;
+        }, 500);
     }
 </script>
 
