@@ -3,43 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghaffar Services | خدمات غفار</title>
+    <title>Ghaffar Services | طلب صفحة هبوط</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
-        .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 450px; text-align: center; }
-        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 4px solid #e41e3f; object-fit: cover; margin-bottom: 15px; }
-        h2 { color: #1c1e21; margin: 10px 0 5px; font-size: 22px; }
-        .price { color: #e41e3f; font-weight: bold; font-size: 24px; margin-bottom: 20px; display: block; background: #fff0f2; padding: 10px; border-radius: 10px; }
-        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; text-align: right; box-sizing: border-box; }
-        .btn-container { display: flex; gap: 10px; flex-direction: column; }
-        .btn { color: white; padding: 15px; border: none; border-radius: 10px; width: 100%; font-size: 16px; font-weight: bold; cursor: pointer; text-decoration: none; display: block; }
-        .wa { background: #25D366; }
-        .tg { background: #0088cc; }
+        /* ديزاين احترافي غامق بحال اللي عجبك في الأول */
+        :root { --primary: #e41e3f; --dark: #0f172a; --card: #1e293b; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--dark); color: white; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; box-sizing: border-box; }
+        
+        .card { background: var(--card); padding: 30px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); width: 100%; max-width: 450px; text-align: center; border: 1px solid #334155; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), #ff4d6d); }
+        
+        /* بلاصة الصورة الشخصية */
+        .profile-img { width: 130px; height: 130px; border-radius: 20px; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 15px; box-shadow: 0 0 20px rgba(228, 30, 63, 0.3); }
+        
+        h2 { color: #fff; margin-bottom: 5px; font-size: 24px; }
+        .price { color: var(--primary); font-weight: bold; font-size: 28px; margin-bottom: 25px; display: block; background: rgba(228, 30, 63, 0.1); padding: 12px; border-radius: 12px; border: 1px solid rgba(228, 30, 63, 0.2); }
+        
+        .lang-label { display: block; text-align: right; font-size: 14px; margin-bottom: 5px; color: #94a3b8; font-weight: bold; }
+        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #334155; border-radius: 10px; font-size: 15px; background: #0f172a; color: white; box-sizing: border-box; text-align: right; }
+        
+        .btn-container { display: flex; gap: 12px; flex-direction: column; margin-top: 10px; }
+        .btn { color: white; padding: 16px; border: none; border-radius: 12px; width: 100%; font-size: 17px; font-weight: bold; cursor: pointer; transition: 0.3s; text-decoration: none; display: block; }
+        .wa { background: #25D366; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+        .tg { background: #0088cc; box-shadow: 0 4px 15px rgba(0,136,204,0.3); }
+        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
     </style>
 </head>
 <body>
 
 <div class="card">
     <img src="me.jpg" alt="Abdul Ghaffar" class="profile-img">
+    
     <h2>Ghaffar Services</h2>
-    <p style="color: #65676b; margin-bottom: 20px;">Professional Landing Pages & Bots</p>
+    <p style="color: #94a3b8; margin-top: -5px; margin-bottom: 20px;">Professional Landing Pages</p>
     
     <span class="price">30$ (≈ 300 DH)</span>
     
-    <input type="text" id="name" placeholder="Full Name | الإسم الكامل">
-    <input type="tel" id="phone" placeholder="Phone Number | رقم الهاتف">
+    <label class="lang-label">الإسم الكامل | Full Name</label>
+    <input type="text" id="name" placeholder="أدخل اسمك هنا">
+    
+    <label class="lang-label">رقم الهاتف | Phone Number</label>
+    <input type="tel" id="phone" placeholder="مثال: 0600000000">
+    
+    <label class="lang-label">الدولة | Country</label>
     <select id="country">
-        <option value="" disabled selected>Select Country / اختر الدولة</option>
-        <option value="Morocco">Morocco 🇲🇦 المغرب</option>
+        <option value="Morocco" selected>Morocco 🇲🇦 المغرب</option>
         <option value="Saudi Arabia">Saudi Arabia 🇸🇦 السعودية</option>
         <option value="Other">Other / دولة أخرى</option>
     </select>
-    <input type="text" id="city_input" placeholder="City | المدينة">
+
+    <label class="lang-label">المدينة | City</label>
+    <input type="text" id="city_input" placeholder="مدينتك">
 
     <div class="btn-container">
-        <button class="btn wa" onclick="send('wa')">Confirm via WhatsApp | واتساب</button>
-        <button class="btn tg" onclick="send('tg')">Confirm via Telegram | تيليغرام</button>
+        <button class="btn wa" onclick="send('wa')">تأكيد الطلب عبر واتساب</button>
+        <button class="btn tg" onclick="send('tg')">تأكيد الطلب عبر تيليغرام</button>
     </div>
+    
+    <p style="font-size: 12px; color: #64748b; margin-top: 20px;">الدفع عند الاستلام | Payment on Delivery</p>
 </div>
 
 <script>
@@ -49,12 +69,24 @@
         var co = document.getElementById('country').value;
         var ci = document.getElementById('city_input').value;
         
-        if(!n || !p || !co || !ci) { alert("يرجى ملء جميع الخانات"); return; }
+        if(!n || !p || !co || !ci) { 
+            alert("عفاك عمر الخانات كاملين!"); 
+            return; 
+        }
 
-        var text = "🚀 NEW ORDER / طلب جديد:\n\n👤 Name: " + n + "\n📞 Phone: " + p + "\n🌍 Country: " + co + "\n🏙️ City: " + ci + "\n💰 Price: 30$";
+        // معلومات البوت ديالك (Ghaffar Services Bot)
+        var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
+        var telegram_id = "7592813105"; 
+        
+        var text = "🚀 طلب جديد / NEW ORDER:\n\n" + 
+                   "👤 الاسم: " + n + "\n" + 
+                   "📞 الهاتف: " + p + "\n" + 
+                   "🌍 الدولة: " + co + "\n" + 
+                   "🏙️ المدينة: " + ci + "\n" + 
+                   "💰 الثمن: 30$";
 
-        // إرسال الإشعار لـ Ghaffar Services Bot
-        fetch(`https://api.telegram.org/bot8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos/sendMessage?chat_id=7592813105&text=${encodeURIComponent(text)}`);
+        // إرسال الإشعار لتيليغرام
+        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
 
         if(platform === 'wa') {
             window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
