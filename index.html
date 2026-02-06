@@ -11,8 +11,11 @@
         .price { color: #e41e3f; font-weight: bold; font-size: 24px; margin-bottom: 25px; display: block; background: #fff0f2; padding: 10px; border-radius: 10px; }
         .lang-label { display: block; text-align: right; font-size: 14px; margin-bottom: 5px; color: #65676b; font-weight: bold; }
         input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 15px; outline: none; background: #fff; box-sizing: border-box; }
-        .btn { background: #25D366; color: white; padding: 18px; border: none; border-radius: 10px; width: 100%; font-size: 18px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 10px rgba(37,211,102,0.3); transition: 0.3s; }
-        .btn:hover { background: #1ebe57; transform: translateY(-2px); }
+        .btn-container { display: flex; gap: 10px; flex-direction: column; }
+        .btn { color: white; padding: 15px; border: none; border-radius: 10px; width: 100%; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; text-decoration: none; display: block; }
+        .wa { background: #25D366; box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
+        .tg { background: #0088cc; box-shadow: 0 4px 10px rgba(0,136,204,0.3); }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
     </style>
 </head>
 <body>
@@ -33,25 +36,20 @@
         <option value="Morocco">Morocco 🇲🇦 المغرب</option>
         <option value="Saudi Arabia">Saudi Arabia 🇸🇦 السعودية</option>
         <option value="UAE">UAE 🇦🇪 الإمارات</option>
-        <option value="USA">USA 🇺🇸 أمريكا</option>
-        <option value="France">France 🇫🇷 فرنسا</option>
-        <option value="Spain">Spain 🇪🇸 إسبانيا</option>
-        <option value="Germany">Germany 🇩🇪 ألمانيا</option>
-        <option value="UK">UK 🇬🇧 بريطانيا</option>
-        <option value="Canada">Canada 🇨🇦 كندا</option>
-        <option value="Qatar">Qatar 🇶🇦 قطر</option>
-        <option value="Egypt">Egypt 🇪🇬 مصر</option>
         <option value="Other">Other / دولة أخرى</option>
     </select>
 
     <label class="lang-label">City | المدينة</label>
     <input type="text" id="city_input" placeholder="Your City">
 
-    <button class="btn" onclick="send()">Confirm Order | تأكيد الطلب</button>
+    <div class="btn-container">
+        <button class="btn wa" onclick="send('wa')">Confirm via WhatsApp | واتساب</button>
+        <button class="btn tg" onclick="send('tg')">Confirm via Telegram | تيليغرام</button>
+    </div>
 </div>
 
 <script>
-    function send() {
+    function send(platform) {
         var n = document.getElementById('name').value;
         var p = document.getElementById('phone').value;
         var co = document.getElementById('country').value;
@@ -62,35 +60,20 @@
             return; 
         }
 
-        // --- إعدادات البوت ديالك ---
         var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
         var telegram_id = "7592813105"; 
         
-        var telegram_text = "🚀 طلب جديد من الموقع:\n\n" +
-                            "👤 الاسم: " + n + "\n" +
-                            "📞 الهاتف: " + p + "\n" +
-                            "🌍 الدولة: " + co + "\n" +
-                            "🏙️ المدينة: " + ci + "\n" +
-                            "💰 الثمن: 30$";
+        var text = "🚀 طلب جديد:\n" + "👤 الاسم: " + n + "\n" + "📞 الهاتف: " + p + "\n" + "🏙️ المدينة: " + ci;
 
-        // إرسال لتيليغرام في الكواليس
-        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ chat_id: telegram_id, text: telegram_text })
-        });
+        // صيفط الميساج للبوت ديالك ديما (باش تبقى عندك النسخة)
+        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
 
-        // إرسال لواتساب
-        var msg = "New International Order:%0A" + 
-                  "*Name:* " + n + "%0A" + 
-                  "*Phone:* " + p + "%0A" + 
-                  "*Country:* " + co + "%0A" + 
-                  "*City:* " + ci + "%0A" +
-                  "*Price:* 30$";
-                  
-        setTimeout(function(){
-            window.location.href = "https://wa.me/212608337962?text=" + msg;
-        }, 500);
+        if(platform === 'wa') {
+            window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
+        } else {
+            // هادي كتصيفط الكليان نيشان للبوت ديالك باش يهضر معاك
+            window.location.href = "https://t.me/GhaffarMakerBot?start=order";
+        }
     }
 </script>
 
