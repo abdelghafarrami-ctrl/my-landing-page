@@ -37,6 +37,9 @@
     
     <label class="lang-label">الإسم الكامل | Full Name</label>
     <input type="text" id="name" placeholder="أدخل اسمك هنا">
+
+    <label class="lang-label">إسم صفحتك أو مشروعك | Page/Brand Name</label>
+    <input type="text" id="page_name" placeholder="مثال: متجر الملابس الأنيقة">
     
     <label class="lang-label">رقم الهاتف | Phone Number</label>
     <input type="tel" id="phone" placeholder="مثال: 0600000000">
@@ -46,11 +49,6 @@
         <option value="المغرب" selected>المغرب 🇲🇦 Morocco</option>
         <option value="السعودية">السعودية 🇸🇦 Saudi Arabia</option>
         <option value="الإمارات">الإمارات 🇦🇪 UAE</option>
-        <option value="قطر">قطر 🇶🇦 Qatar</option>
-        <option value="الكويت">الكويت 🇰🇼 Kuwait</option>
-        <option value="البحرين">البحرين 🇧🇭 Bahrain</option>
-        <option value="عمان">عمان 🇴🇲 Oman</option>
-        <option value="مصر">مصر 🇪🇬 Egypt</option>
         <option value="أخرى">دولة أخرى | Other</option>
     </select>
 
@@ -67,5 +65,37 @@
 
 <script>
     function send(platform) {
-        var n = document.
-            
+        var n = document.getElementById('name').value;
+        var pg = document.getElementById('page_name').value; // زدت هاد المتغير
+        var p = document.getElementById('phone').value;
+        var co = document.getElementById('country').value;
+        var ci = document.getElementById('city_input').value;
+        
+        if(!n || !pg || !p || !co || !ci) { 
+            alert("عفاك عمر الخانات كاملين باش نقدر نصاوب ليك الصفحة!"); 
+            return; 
+        }
+
+        var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
+        var telegram_id = "7592813105"; 
+        
+        var text = "🚀 طلب جديد (Abdo Rami):\n\n" + 
+                   "👤 صاحب الطلب: " + n + "\n" + 
+                   "📄 إسم الصفحة: " + pg + "\n" + // هنا غاتبان سمية الصفحة في التيليغرام
+                   "📞 الهاتف: " + p + "\n" + 
+                   "🌍 الدولة: " + co + "\n" + 
+                   "🏙️ المدينة: " + ci + "\n" + 
+                   "💰 الثمن: 30$";
+
+        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
+
+        if(platform === 'wa') {
+            window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
+        } else {
+            window.location.href = "https://t.me/GhaffarMakerBot";
+        }
+    }
+</script>
+
+</body>
+</html>
