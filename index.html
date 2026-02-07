@@ -43,9 +43,15 @@
     
     <label class="lang-label">الدولة | Country</label>
     <select id="country">
-        <option value="Morocco" selected>Morocco 🇲🇦 المغرب</option>
-        <option value="Saudi Arabia">Saudi Arabia 🇸🇦 السعودية</option>
-        <option value="Other">Other / دولة أخرى</option>
+        <option value="المغرب" selected>المغرب 🇲🇦 Morocco</option>
+        <option value="السعودية">السعودية 🇸🇦 Saudi Arabia</option>
+        <option value="الإمارات">الإمارات 🇦🇪 UAE</option>
+        <option value="قطر">قطر 🇶🇦 Qatar</option>
+        <option value="الكويت">الكويت 🇰🇼 Kuwait</option>
+        <option value="البحرين">البحرين 🇧🇭 Bahrain</option>
+        <option value="عمان">عمان 🇴🇲 Oman</option>
+        <option value="مصر">مصر 🇪🇬 Egypt</option>
+        <option value="أخرى">دولة أخرى | Other</option>
     </select>
 
     <label class="lang-label">المدينة | City</label>
@@ -61,35 +67,5 @@
 
 <script>
     function send(platform) {
-        var n = document.getElementById('name').value;
-        var p = document.getElementById('phone').value;
-        var co = document.getElementById('country').value;
-        var ci = document.getElementById('city_input').value;
-        
-        if(!n || !p || !co || !ci) { 
-            alert("عفاك عمر الخانات كاملين!"); 
-            return; 
-        }
-
-        var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
-        var telegram_id = "7592813105"; 
-        
-        var text = "🚀 طلب جديد / NEW ORDER (Abdo Rami):\n\n" + 
-                   "👤 الاسم: " + n + "\n" + 
-                   "📞 الهاتف: " + p + "\n" + 
-                   "🌍 الدولة: " + co + "\n" + 
-                   "🏙️ المدينة: " + ci + "\n" + 
-                   "💰 الثمن: 30$";
-
-        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
-
-        if(platform === 'wa') {
-            window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
-        } else {
-            window.location.href = "https://t.me/GhaffarMakerBot";
-        }
-    }
-</script>
-
-</body>
-</html>
+        var n = document.
+            
