@@ -1,18 +1,15 @@
-<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghaffar Services | طلب صفحة هبوط</title>
+    <title>Abdo Rami | طلب صفحة هبوط</title>
     <style>
-        /* ديزاين احترافي غامق بحال اللي عجبك في الأول */
         :root { --primary: #e41e3f; --dark: #0f172a; --card: #1e293b; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--dark); color: white; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; box-sizing: border-box; }
         
         .card { background: var(--card); padding: 30px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); width: 100%; max-width: 450px; text-align: center; border: 1px solid #334155; position: relative; overflow: hidden; }
         .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), #ff4d6d); }
         
-        /* بلاصة الصورة الشخصية */
         .profile-img { width: 130px; height: 130px; border-radius: 20px; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 15px; box-shadow: 0 0 20px rgba(228, 30, 63, 0.3); }
         
         h2 { color: #fff; margin-bottom: 5px; font-size: 24px; }
@@ -31,9 +28,9 @@
 <body>
 
 <div class="card">
-    <img src="me.jpg" alt="Abdul Ghaffar" class="profile-img">
+    <img src="me.jpg" alt="Abdo Rami" class="profile-img">
     
-    <h2>Ghaffar Services</h2>
+    <h2>Abdo Rami</h2>
     <p style="color: #94a3b8; margin-top: -5px; margin-bottom: 20px;">Professional Landing Pages</p>
     
     <span class="price">30$ (≈ 300 DH)</span>
@@ -74,18 +71,16 @@
             return; 
         }
 
-        // معلومات البوت ديالك (Ghaffar Services Bot)
         var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
         var telegram_id = "7592813105"; 
         
-        var text = "🚀 طلب جديد / NEW ORDER:\n\n" + 
+        var text = "🚀 طلب جديد / NEW ORDER (Abdo Rami):\n\n" + 
                    "👤 الاسم: " + n + "\n" + 
                    "📞 الهاتف: " + p + "\n" + 
                    "🌍 الدولة: " + co + "\n" + 
                    "🏙️ المدينة: " + ci + "\n" + 
                    "💰 الثمن: 30$";
 
-        // إرسال الإشعار لتيليغرام
         fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
 
         if(platform === 'wa') {
