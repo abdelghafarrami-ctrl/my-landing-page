@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -17,7 +18,6 @@ justify-content: center;
 align-items: center;
 min-height: 100vh;
 padding: 20px;
-box-sizing: border-box;
 }
 
 .card {
@@ -29,85 +29,53 @@ width: 100%;
 max-width: 450px;
 text-align: center;
 border: 1px solid #334155;
-position: relative;
-overflow: hidden;
-}
-
-.card::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 5px;
-background: linear-gradient(90deg, var(--primary), #ff4d6d);
-}
-
-.profile-img {
-width: 130px;
-height: 130px;
-border-radius: 20px;
-object-fit: cover;
-border: 3px solid var(--primary);
-margin-bottom: 15px;
 }
 
 h2 { margin-bottom: 5px; }
-
-.subtitle {
-color: #94a3b8;
-margin-bottom: 15px;
-}
 
 .price {
 color: var(--primary);
 font-weight: bold;
 font-size: 26px;
 margin-bottom: 20px;
-display: block;
-background: rgba(228, 30, 63, 0.1);
+background: rgba(228,30,63,0.1);
 padding: 12px;
 border-radius: 12px;
 }
 
-.lang-label {
+label {
 display: block;
 text-align: right;
-font-size: 14px;
 margin-bottom: 5px;
 color: #94a3b8;
-font-weight: bold;
+font-size: 14px;
 }
 
 input, select {
 width: 100%;
 padding: 12px;
 margin-bottom: 15px;
-border: 1px solid #334155;
 border-radius: 10px;
-font-size: 15px;
+border: 1px solid #334155;
 background: #0f172a;
 color: white;
 text-align: right;
 }
 
-.btn-container { display: flex; flex-direction: column; gap: 10px; }
-
-.btn {
+button {
+background: #0088cc;
 color: white;
 padding: 15px;
 border: none;
 border-radius: 12px;
+width: 100%;
 font-size: 16px;
 font-weight: bold;
 cursor: pointer;
 transition: 0.3s;
 }
 
-.wa { background: #25D366; }
-.tg { background: #0088cc; }
-
-.btn:hover {
+button:hover {
 transform: translateY(-3px);
 }
 </style>
@@ -116,77 +84,76 @@ transform: translateY(-3px);
 <body>
 
 <div class="card">
-<img src="me.jpg" alt="Abdo Rami" class="profile-img">
 
 <h2>Abdo Rami</h2>
-<p class="subtitle">مصمم صفحات هبوط احترافية تزيد لك المبيعات 🚀</p>
+<p style="color:#94a3b8;">كنحول زوار صفحتك إلى زبناء حقيقيين 🚀</p>
 
-<span class="price">🔥 عرض خاص: 30$ فقط (≈ 300DH)</span>
+<div class="price">🔥 عرض محدود – 30$ فقط (≈ 300DH)</div>
 
-<label class="lang-label">الإسم الكامل</label>
+<label>الإسم الكامل</label>
 <input type="text" id="name" placeholder="أدخل اسمك هنا">
 
-<label class="lang-label">إسم صفحتك أو مشروعك</label>
+<label>إسم صفحتك أو مشروعك</label>
 <input type="text" id="page_name" placeholder="مثال: متجر الملابس">
 
-<label class="lang-label">رقم الهاتف</label>
+<label>رقم الهاتف</label>
 <input type="tel" id="phone" placeholder="0600000000">
 
-<label class="lang-label">الدولة</label>
+<label>الدولة</label>
 <select id="country">
-<option value="المغرب" selected>المغرب 🇲🇦</option>
+<option value="المغرب">المغرب 🇲🇦</option>
 <option value="السعودية">السعودية 🇸🇦</option>
 <option value="الإمارات">الإمارات 🇦🇪</option>
 <option value="أخرى">أخرى</option>
 </select>
 
-<label class="lang-label">المدينة</label>
-<input type="text" id="city_input" placeholder="مدينتك">
+<label>المدينة</label>
+<input type="text" id="city">
 
-<div class="btn-container">
-<button class="btn wa" onclick="sendOrder('wa')">تأكيد عبر واتساب</button>
-<button class="btn tg" onclick="sendOrder('tg')">تأكيد عبر تيليغرام</button>
-</div>
+<button onclick="sendTelegram()">تأكيد الطلب عبر تيليغرام</button>
 
-<p style="font-size:12px;color:#64748b;margin-top:20px;">
+<p style="font-size:12px;color:#64748b;margin-top:15px;">
 الدفع عند الاستلام
 </p>
 
 </div>
 
 <script>
-function sendOrder(platform){
+function sendTelegram() {
 
-var n = document.getElementById('name').value.trim();
-var pg = document.getElementById('page_name').value.trim();
-var p = document.getElementById('phone').value.trim();
-var co = document.getElementById('country').value;
-var ci = document.getElementById('city_input').value.trim();
+var n = document.getElementById("name").value;
+var pg = document.getElementById("page_name").value;
+var p = document.getElementById("phone").value;
+var co = document.getElementById("country").value;
+var ci = document.getElementById("city").value;
 
-if(!n || !pg || !p || !ci){
+if(!n || !pg || !p || !co || !ci){
 alert("عفاك عمر جميع الخانات");
 return;
 }
 
-if(p.length < 9){
-alert("دخل رقم هاتف صحيح");
-return;
-}
+/* 🔴 حط التوكن ديالك هنا */
+var telegram_token = "PUT_YOUR_BOT_TOKEN_HERE";
 
-var text = "🚀 طلب جديد لصفحة هبوط\n\n" +
-"👤 الإسم: " + n + "\n" +
-"🏷️ المشروع: " + pg + "\n" +
+/* 🔴 حط chat_id ديالك هنا */
+var telegram_id = "PUT_YOUR_CHAT_ID_HERE";
+
+var text =
+"🚀 طلب جديد\n\n" +
+"👤 الاسم: " + n + "\n" +
+"📄 الصفحة: " + pg + "\n" +
 "📞 الهاتف: " + p + "\n" +
 "🌍 الدولة: " + co + "\n" +
-"🏙️ المدينة: " + ci + "\n\n" +
-"💰 الباقة: 30$";
+"🏙️ المدينة: " + ci + "\n" +
+"💰 السعر: 30$";
 
-if(platform === 'wa'){
-window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
-}
-else{
-window.location.href = "https://t.me/GhaffarMakerBot";
-}
+fetch("https://api.telegram.org/bot" + telegram_token + "/sendMessage?chat_id=" + telegram_id + "&text=" + encodeURIComponent(text))
+.then(() => {
+alert("تم إرسال الطلب بنجاح ✅");
+})
+.catch(() => {
+alert("وقع خطأ، حاول مرة أخرى");
+});
 
 }
 </script>
