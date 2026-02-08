@@ -9,75 +9,73 @@
 :root { --primary: #e41e3f; --dark: #0f172a; --card: #1e293b; }
 
 body {
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-background-color: var(--dark);
-color: white;
-margin: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
-padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--dark);
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .card {
-background: var(--card);
-padding: 30px;
-border-radius: 24px;
-box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-width: 100%;
-max-width: 450px;
-text-align: center;
-border: 1px solid #334155;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid #334155;
 }
 
 h2 { margin-bottom: 5px; }
 
 .price {
-color: var(--primary);
-font-weight: bold;
-font-size: 26px;
-margin-bottom: 20px;
-background: rgba(228,30,63,0.1);
-padding: 12px;
-border-radius: 12px;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 26px;
+    margin-bottom: 20px;
+    background: rgba(228,30,63,0.1);
+    padding: 12px;
+    border-radius: 12px;
 }
 
 label {
-display: block;
-text-align: right;
-margin-bottom: 5px;
-color: #94a3b8;
-font-size: 14px;
+    display: block;
+    text-align: right;
+    margin-bottom: 5px;
+    color: #94a3b8;
+    font-size: 14px;
 }
 
 input, select {
-width: 100%;
-padding: 12px;
-margin-bottom: 15px;
-border-radius: 10px;
-border: 1px solid #334155;
-background: #0f172a;
-color: white;
-text-align: right;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+    text-align: right;
 }
 
 button {
-background: #0088cc;
-color: white;
-padding: 15px;
-border: none;
-border-radius: 12px;
-width: 100%;
-font-size: 16px;
-font-weight: bold;
-cursor: pointer;
-transition: 0.3s;
+    background: #0088cc;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-button:hover {
-transform: translateY(-3px);
-}
+button:hover { transform: translateY(-3px); }
 </style>
 </head>
 
@@ -86,75 +84,69 @@ transform: translateY(-3px);
 <div class="card">
 
 <h2>Abdo Rami</h2>
-<p style="color:#94a3b8;">كنحول زوار صفحتك إلى زبناء حقيقيين 🚀</p>
+<p style="color:#94a3b8;">Professional Landing Pages | كنحول زوار صفحتك إلى زبناء حقيقيين 🚀</p>
 
 <div class="price">🔥 عرض محدود – 30$ فقط (≈ 300DH)</div>
 
-<label>الإسم الكامل</label>
-<input type="text" id="name" placeholder="أدخل اسمك هنا">
+<label>Full Name | الإسم الكامل</label>
+<input type="text" id="name" placeholder="Enter your name | أدخل اسمك هنا">
 
-<label>إسم صفحتك أو مشروعك</label>
-<input type="text" id="page_name" placeholder="مثال: متجر الملابس">
+<label>Page/Brand Name | إسم صفحتك أو مشروعك</label>
+<input type="text" id="page_name" placeholder="Example: Elegant Clothes Store | مثال: متجر الملابس">
 
-<label>رقم الهاتف</label>
-<input type="tel" id="phone" placeholder="0600000000">
+<label>Phone Number | رقم الهاتف</label>
+<input type="tel" id="phone" placeholder="+212600000000">
 
-<label>الدولة</label>
+<label>Country | الدولة</label>
 <select id="country">
-<option value="المغرب">المغرب 🇲🇦</option>
-<option value="السعودية">السعودية 🇸🇦</option>
-<option value="الإمارات">الإمارات 🇦🇪</option>
-<option value="أخرى">أخرى</option>
+<option value="Morocco | المغرب" selected>Morocco 🇲🇦 | المغرب</option>
+<option value="Saudi Arabia | السعودية">Saudi Arabia 🇸🇦 | السعودية</option>
+<option value="UAE | الإمارات">UAE 🇦🇪 | الإمارات</option>
+<option value="Other | أخرى">Other | أخرى</option>
 </select>
 
-<label>المدينة</label>
-<input type="text" id="city">
+<label>City | المدينة</label>
+<input type="text" id="city" placeholder="Your city | مدينتك">
 
-<button onclick="sendTelegram()">تأكيد الطلب عبر تيليغرام</button>
+<button onclick="sendTelegram()">Confirm via Telegram | تأكيد الطلب عبر تيليغرام</button>
 
 <p style="font-size:12px;color:#64748b;margin-top:15px;">
-الدفع عند الاستلام
+Payment on Delivery | الدفع عند الاستلام
 </p>
 
 </div>
 
 <script>
 function sendTelegram() {
+    var n = document.getElementById("name").value;
+    var pg = document.getElementById("page_name").value;
+    var p = document.getElementById("phone").value;
+    var co = document.getElementById("country").value;
+    var ci = document.getElementById("city").value;
 
-var n = document.getElementById("name").value;
-var pg = document.getElementById("page_name").value;
-var p = document.getElementById("phone").value;
-var co = document.getElementById("country").value;
-var ci = document.getElementById("city").value;
+    if(!n || !pg || !p || !co || !ci){
+        alert("Please fill all fields | عفاك عمر جميع الخانات");
+        return;
+    }
 
-if(!n || !pg || !p || !co || !ci){
-alert("عفاك عمر جميع الخانات");
-return;
-}
+    /* 🔴 ضع التوكن ديال البوت هنا */
+    var telegram_token = "PUT_YOUR_BOT_TOKEN_HERE";
 
-/* 🔴 حط التوكن ديالك هنا */
-var telegram_token = "PUT_YOUR_BOT_TOKEN_HERE";
+    /* 🔴 ضع chat_id ديالك هنا */
+    var telegram_id = "PUT_YOUR_CHAT_ID_HERE";
 
-/* 🔴 حط chat_id ديالك هنا */
-var telegram_id = "PUT_YOUR_CHAT_ID_HERE";
+    var text =
+    "🚀 New Order | طلب جديد:\n\n" +
+    "👤 Name | الإسم: " + n + "\n" +
+    "📄 Page | الصفحة: " + pg + "\n" +
+    "📞 Phone | الهاتف: " + p + "\n" +
+    "🌍 Country | الدولة: " + co + "\n" +
+    "🏙️ City | المدينة: " + ci + "\n" +
+    "💰 Price | الثمن: 30$";
 
-var text =
-"🚀 طلب جديد\n\n" +
-"👤 الاسم: " + n + "\n" +
-"📄 الصفحة: " + pg + "\n" +
-"📞 الهاتف: " + p + "\n" +
-"🌍 الدولة: " + co + "\n" +
-"🏙️ المدينة: " + ci + "\n" +
-"💰 السعر: 30$";
-
-fetch("https://api.telegram.org/bot" + telegram_token + "/sendMessage?chat_id=" + telegram_id + "&text=" + encodeURIComponent(text))
-.then(() => {
-alert("تم إرسال الطلب بنجاح ✅");
-})
-.catch(() => {
-alert("وقع خطأ، حاول مرة أخرى");
-});
-
+    fetch("https://api.telegram.org/bot" + telegram_token + "/sendMessage?chat_id=" + telegram_id + "&text=" + encodeURIComponent(text))
+    .then(() => { alert("Order sent successfully ✅ | تم إرسال الطلب بنجاح"); })
+    .catch(() => { alert("Error, please try again | وقع خطأ، حاول مرة أخرى"); });
 }
 </script>
 
