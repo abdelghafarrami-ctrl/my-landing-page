@@ -1,100 +1,194 @@
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdo Rami | طلب صفحة هبوط</title>
-    <style>
-        :root { --primary: #e41e3f; --dark: #0f172a; --card: #1e293b; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--dark); color: white; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; box-sizing: border-box; }
-        
-        .card { background: var(--card); padding: 30px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); width: 100%; max-width: 450px; text-align: center; border: 1px solid #334155; position: relative; overflow: hidden; }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, var(--primary), #ff4d6d); }
-        
-        .profile-img { width: 130px; height: 130px; border-radius: 20px; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 15px; box-shadow: 0 0 20px rgba(228, 30, 63, 0.3); }
-        
-        h2 { color: #fff; margin-bottom: 5px; font-size: 24px; }
-        .price { color: var(--primary); font-weight: bold; font-size: 28px; margin-bottom: 25px; display: block; background: rgba(228, 30, 63, 0.1); padding: 12px; border-radius: 12px; border: 1px solid rgba(228, 30, 63, 0.2); }
-        
-        .lang-label { display: block; text-align: right; font-size: 14px; margin-bottom: 5px; color: #94a3b8; font-weight: bold; }
-        input, select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #334155; border-radius: 10px; font-size: 15px; background: #0f172a; color: white; box-sizing: border-box; text-align: right; }
-        
-        .btn-container { display: flex; gap: 12px; flex-direction: column; margin-top: 10px; }
-        .btn { color: white; padding: 16px; border: none; border-radius: 12px; width: 100%; font-size: 17px; font-weight: bold; cursor: pointer; transition: 0.3s; text-decoration: none; display: block; }
-        .wa { background: #25D366; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
-        .tg { background: #0088cc; box-shadow: 0 4px 15px rgba(0,136,204,0.3); }
-        .btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdo Rami | طلب صفحة هبوط</title>
+
+<style>
+:root { --primary: #e41e3f; --dark: #0f172a; --card: #1e293b; }
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--dark);
+color: white;
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.card {
+background: var(--card);
+padding: 30px;
+border-radius: 24px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+width: 100%;
+max-width: 450px;
+text-align: center;
+border: 1px solid #334155;
+position: relative;
+overflow: hidden;
+}
+
+.card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 5px;
+background: linear-gradient(90deg, var(--primary), #ff4d6d);
+}
+
+.profile-img {
+width: 130px;
+height: 130px;
+border-radius: 20px;
+object-fit: cover;
+border: 3px solid var(--primary);
+margin-bottom: 15px;
+}
+
+h2 { margin-bottom: 5px; }
+
+.subtitle {
+color: #94a3b8;
+margin-bottom: 15px;
+}
+
+.price {
+color: var(--primary);
+font-weight: bold;
+font-size: 26px;
+margin-bottom: 20px;
+display: block;
+background: rgba(228, 30, 63, 0.1);
+padding: 12px;
+border-radius: 12px;
+}
+
+.lang-label {
+display: block;
+text-align: right;
+font-size: 14px;
+margin-bottom: 5px;
+color: #94a3b8;
+font-weight: bold;
+}
+
+input, select {
+width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid #334155;
+border-radius: 10px;
+font-size: 15px;
+background: #0f172a;
+color: white;
+text-align: right;
+}
+
+.btn-container { display: flex; flex-direction: column; gap: 10px; }
+
+.btn {
+color: white;
+padding: 15px;
+border: none;
+border-radius: 12px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.wa { background: #25D366; }
+.tg { background: #0088cc; }
+
+.btn:hover {
+transform: translateY(-3px);
+}
+</style>
 </head>
+
 <body>
 
 <div class="card">
-    <img src="me.jpg" alt="Abdo Rami" class="profile-img">
-    
-    <h2>Abdo Rami</h2>
-    <p style="color: #94a3b8; margin-top: -5px; margin-bottom: 20px;">Professional Landing Pages</p>
-    
-    <span class="price">30$ (≈ 300 DH)</span>
-    
-    <label class="lang-label">الإسم الكامل | Full Name</label>
-    <input type="text" id="name" placeholder="أدخل اسمك هنا">
+<img src="me.jpg" alt="Abdo Rami" class="profile-img">
 
-    <label class="lang-label">إسم صفحتك أو مشروعك | Page/Brand Name</label>
-    <input type="text" id="page_name" placeholder="مثال: متجر الملابس الأنيقة">
-    
-    <label class="lang-label">رقم الهاتف | Phone Number</label>
-    <input type="tel" id="phone" placeholder="مثال: 0600000000">
-    
-    <label class="lang-label">الدولة | Country</label>
-    <select id="country">
-        <option value="المغرب" selected>المغرب 🇲🇦 Morocco</option>
-        <option value="السعودية">السعودية 🇸🇦 Saudi Arabia</option>
-        <option value="الإمارات">الإمارات 🇦🇪 UAE</option>
-        <option value="أخرى">دولة أخرى | Other</option>
-    </select>
+<h2>Abdo Rami</h2>
+<p class="subtitle">مصمم صفحات هبوط احترافية تزيد لك المبيعات 🚀</p>
 
-    <label class="lang-label">المدينة | City</label>
-    <input type="text" id="city_input" placeholder="مدينتك">
+<span class="price">🔥 عرض خاص: 30$ فقط (≈ 300DH)</span>
 
-    <div class="btn-container">
-        <button class="btn wa" onclick="send('wa')">تأكيد الطلب عبر واتساب</button>
-        <button class="btn tg" onclick="send('tg')">تأكيد الطلب عبر تيليغرام</button>
-    </div>
-    
-    <p style="font-size: 12px; color: #64748b; margin-top: 20px;">الدفع عند الاستلام | Payment on Delivery</p>
+<label class="lang-label">الإسم الكامل</label>
+<input type="text" id="name" placeholder="أدخل اسمك هنا">
+
+<label class="lang-label">إسم صفحتك أو مشروعك</label>
+<input type="text" id="page_name" placeholder="مثال: متجر الملابس">
+
+<label class="lang-label">رقم الهاتف</label>
+<input type="tel" id="phone" placeholder="0600000000">
+
+<label class="lang-label">الدولة</label>
+<select id="country">
+<option value="المغرب" selected>المغرب 🇲🇦</option>
+<option value="السعودية">السعودية 🇸🇦</option>
+<option value="الإمارات">الإمارات 🇦🇪</option>
+<option value="أخرى">أخرى</option>
+</select>
+
+<label class="lang-label">المدينة</label>
+<input type="text" id="city_input" placeholder="مدينتك">
+
+<div class="btn-container">
+<button class="btn wa" onclick="sendOrder('wa')">تأكيد عبر واتساب</button>
+<button class="btn tg" onclick="sendOrder('tg')">تأكيد عبر تيليغرام</button>
+</div>
+
+<p style="font-size:12px;color:#64748b;margin-top:20px;">
+الدفع عند الاستلام
+</p>
+
 </div>
 
 <script>
-    function send(platform) {
-        var n = document.getElementById('name').value;
-        var pg = document.getElementById('page_name').value; // زدت هاد المتغير
-        var p = document.getElementById('phone').value;
-        var co = document.getElementById('country').value;
-        var ci = document.getElementById('city_input').value;
-        
-        if(!n || !pg || !p || !co || !ci) { 
-            alert("عفاك عمر الخانات كاملين باش نقدر نصاوب ليك الصفحة!"); 
-            return; 
-        }
+function sendOrder(platform){
 
-        var telegram_token = "8252288492:AAEXJRm-HYygwFDxOQHv2l28o8a7P7Fabos"; 
-        var telegram_id = "7592813105"; 
-        
-        var text = "🚀 طلب جديد (Abdo Rami):\n\n" + 
-                   "👤 صاحب الطلب: " + n + "\n" + 
-                   "📄 إسم الصفحة: " + pg + "\n" + // هنا غاتبان سمية الصفحة في التيليغرام
-                   "📞 الهاتف: " + p + "\n" + 
-                   "🌍 الدولة: " + co + "\n" + 
-                   "🏙️ المدينة: " + ci + "\n" + 
-                   "💰 الثمن: 30$";
+var n = document.getElementById('name').value.trim();
+var pg = document.getElementById('page_name').value.trim();
+var p = document.getElementById('phone').value.trim();
+var co = document.getElementById('country').value;
+var ci = document.getElementById('city_input').value.trim();
 
-        fetch(`https://api.telegram.org/bot${telegram_token}/sendMessage?chat_id=${telegram_id}&text=${encodeURIComponent(text)}`);
+if(!n || !pg || !p || !ci){
+alert("عفاك عمر جميع الخانات");
+return;
+}
 
-        if(platform === 'wa') {
-            window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
-        } else {
-            window.location.href = "https://t.me/GhaffarMakerBot";
-        }
-    }
+if(p.length < 9){
+alert("دخل رقم هاتف صحيح");
+return;
+}
+
+var text = "🚀 طلب جديد لصفحة هبوط\n\n" +
+"👤 الإسم: " + n + "\n" +
+"🏷️ المشروع: " + pg + "\n" +
+"📞 الهاتف: " + p + "\n" +
+"🌍 الدولة: " + co + "\n" +
+"🏙️ المدينة: " + ci + "\n\n" +
+"💰 الباقة: 30$";
+
+if(platform === 'wa'){
+window.location.href = "https://wa.me/212608337962?text=" + encodeURIComponent(text);
+}
+else{
+window.location.href = "https://t.me/GhaffarMakerBot";
+}
+
+}
 </script>
 
 </body>
